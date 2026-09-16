@@ -1,41 +1,67 @@
-Us</div><h2>Learn Better. Grow Faster.</h2>
-<p>At ZSK Academy, our goal is to make online learning simple, accessible, and affordable for every student from Class 1 to 10.</p>
-<div class="fee">Rs. 1,500 / month</div>
-<p>Contact us for class timings, subjects, and admission details.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZSK Academy</title>
+<style>
+body{margin:0;font-family:Arial;color:#123;background:#f5faff}
+header{background:#102e50;color:white;padding:20px;text-align:center}
+nav a{color:white;margin:10px;text-decoration:none}
+main{max-width:900px;margin:auto;padding:25px}
+.hero{text-align:center;padding:45px 10px;background:#eaf6ff}
+h1{font-size:40px;color:#1683ee}
+h2{color:#102e50}
+.box{background:white;margin:15px 0;padding:20px;border-radius:12px;box-shadow:0 2px 8px #ccd}
+.btn{display:inline-block;background:#1683ee;color:white;padding:12px 18px;border-radius:8px;text-decoration:none;margin:5px}
+footer{background:#102e50;color:white;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+
+<header>
+<h2>🎓 ZSK Academy</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+<h1>Quality Online Classes</h1>
+<p>Learn from home with easy explanations, helpful notes and supportive teachers.</p>
+<a class="btn" href="#contact">Join Now</a>
 </section>
 
-<section id="contact" class="contact">
-<div class="wrap contact-grid">
-<div>
-<div class="tag" style="color:#83c7ff">Admissions Open</div>
-<h2>Start Your Learning Journey</h2>
-<p>Fill in the form and send your admission request directly through WhatsApp.</p>
-<p><b>WhatsApp:</b> <a style="color:white" href="https://wa.me/923118192848">03118192848</a></p>
-<p><b>Email:</b> <a style="color:white" href="mailto:zkkakar9090@gmail.com">zkkakar9090@gmail.com</a></p>
-</div>
-<form id="admissionForm">
-<h3>Student Registration</h3>
-<label for="name">Student name</label><input id="name" required>
-<label for="class">Class</label>
-<select id="class" required><option value="">Choose class</option>
-<option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select>
-<label for="subject">Subject</label><input id="subject" placeholder="Example: All subjects" required>
-<label for="phone">Parent/student phone</label><input id="phone" type="tel" required>
-<button class="btn" type="submit">Send on WhatsApp →</button>
-</form>
-</div>
+<section id="courses">
+<h2>📚 Classes 1 to 10</h2>
+<div class="box">📐 Mathematics — Step-by-step learning</div>
+<div class="box">⚛️ Physics — Easy concepts and formulas</div>
+<div class="box">🧪 Chemistry — Difficult topics made easy</div>
+<div class="box">🧬 Biology — Easy explanations and revision</div>
+<div class="box">📖 English — Grammar and writing</div>
+<div class="box">🌍 Urdu & Islamiat — Exam preparation</div>
 </section>
+
+<section id="about">
+<h2>About ZSK Academy</h2>
+<p>Our goal is to make online learning simple, accessible and affordable for students from Class 1 to 10.</p>
+<h2>Rs. 1,500 / month</h2>
+</section>
+
+<section id="contact">
+<h2>📝 Admission</h2>
+<p>Contact us for class timings, subjects and admission.</p>
+<a class="btn" href="https://wa.me/923118192848">WhatsApp: 03118192848</a>
+<p>Email: zkkakar9090@gmail.com</p>
+</section>
+
 </main>
 
-<footer><div class="wrap">© <span id="year"></span> ZSK Academy · Online Classes for Class 1 to 10 · Pakistan</div></footer>
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("admissionForm").addEventListener("submit",function(e){
-e.preventDefault();
-const msg="Admission request for ZSK Academy%0AStudent: "+encodeURIComponent(document.getElementById("name").value)+"%0AClass: "+encodeURIComponent(document.getElementById("class").value)+"%0ASubject: "+encodeURIComponent(document.getElementById("subject").value)+"%0AContact: "+encodeURIComponent(document.getElementById("phone").value);
-window.location.href="https://wa.me/923118192848?text="+msg;
-});
-</script>
+<footer>© 2026 ZSK Academy · Pakistan</footer>
+
 </body>
-</html>
+  </html>
