@@ -1,1 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+<title>ZSK Academy — Learn Without Limits</title>
+
+<meta name="description"
+content="ZSK Academy — modern online learning for students from Class 1 to 10.">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+--bg:#f6f7fb;
+--dark:#10131c;
+--muted:#737887;
+--blue:#6257ff;
+--purple:#8c5cff;
+--cyan:#55d6ff;
+--card:#ffffff;
+--line:#e8e9ef;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"DM Sans",sans-serif;
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+padding:18px 0;
+}
+
+.nav{
+height:64px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+background:#ffffffdd;
+backdrop-filter:blur(18px);
+border:1px solid #ffffff;
+border-radius:18px;
+box-shadow:0 15px 45px #16172a0c;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-family:"Space Grotesk";
+font-weight:700;
+font-size:20px;
+}
+
+.logoMark{
+width:38px;
+height:38px;
+border-radius:12px;
+display:grid;
+place-items:center;
+color:white;
+background:linear-gradient(135deg,var(--blue),var(--purple));
+box-shadow:0 8px 20px #6257ff44;
+}
+
+nav{
+display:flex;
+gap:30px;
+font-size:14px;
+font-weight:600;
+color:#555968;
+}
+
+nav a:hover{
+color:var(--blue);
+}
+
+.navAction{
+padding:11px 18px;
+background:var(--dark);
+color:white;
+border-radius:10px;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 0 80px;
+position:relative;
+overflow:hidden;
+}
+
+.blob{
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(90px);
+opacity:.28;
+z-index:-1;
+}
+
+.blob.one{
+background:#7b6cff;
+top:80px;
+left:-200px;
+}
+
+.blob.two{
+background:#55d6ff;
+right:-200px;
+top:250px;
+}
+
+.heroGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 13px;
+border:1px solid #dedee8;
+background:white;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+color:#555;
+}
+
+.dot{
+width:7px;
+height:7px;
+background:#5fda9a;
+border-radius:50%;
+}
+
+h1{
+font-family:"Space Grotesk";
+font-size:clamp(48px,6vw,78px);
+line-height:.98;
+letter-spacing:-4px;
+margin:22px 0;
+}
+
+.gradient{
+background:linear-gradient(90deg,var(--blue),#a14fff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.heroText{
+font-size:18px;
+line-height:1.8;
+color:var(--muted);
+max-width:570px;
+}
+
+.actions{
+display:flex;
+gap:12px;
+margin-top:32px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 22px;
+border-radius:12px;
+font-weight:700;
+display:inline-flex;
+align-items:center;
+gap:8px;
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.primary{
+background:var(--dark);
+color:white;
+box-shadow:0 15px 30px #11131c22;
+}
+
+.secondary{
+background:white;
+border:1px solid var(--line);
+}
+
+/* HERO VISUAL */
+
+.heroVisual{
+position:relative;
+}
+
+.dashboard{
+background:#10131c;
+border-radius:28px;
+padding:16px;
+box-shadow:0 40px 80px #10131c25;
+transform:rotate(2deg);
+}
+
+.window{
+background:#f8f9fc;
+border-radius:20px;
+overflow:hidden;
+}
+
+.windowTop{
+height:48px;
+display:flex;
+align-items:center;
+gap:6px;
+padding:0 16px;
+background:white;
+}
+
+.circle{
+width:9px;
+height:9px;
+border-radius:50%;
+background:#d9dbe2;
+}
+
+.dashboardBody{
+padding:25px;
+}
+
+.welcome{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:22px;
+}
+
+.avatar{
+width:45px;
+height:45px;
+border-radius:50%;
+background:linear-gradient(135deg,#6257ff,#55d6ff);
+display:grid;
+place-items:center;
+color:white;
+font-weight:bold;
+}
+
+.learningCard{
+background:linear-gradient(135deg,#6257ff,#815dff);
+color:white;
+border-radius:18px;
+padding:22px;
+margin-bottom:15px;
+}
+
+.learningCard small{
+opacity:.75;
+}
+
+.learningCard h3{
+font-size:23px;
+margin:7px 0 17px;
+}
+
+.progress{
+height:7px;
+background:#ffffff44;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress span{
+display:block;
+width:72%;
+height:100%;
+background:white;
+border-radius:20px;
+}
+
+.miniGrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.mini{
+background:white;
+border:1px solid var(--line);
+padding:18px;
+border-radius:15px;
+}
+
+.mini b{
+font-size:22px;
+display:block;
+margin-top:7px;
+}
+
+/* FLOATING CARD */
+
+.floatCard{
+position:absolute;
+background:white;
+padding:15px 18px;
+border-radius:15px;
+box-shadow:0 20px 50px #10131c22;
+display:flex;
+align-items:center;
+gap:12px;
+font-size:13px;
+font-weight:700;
+}
+
+.floatCard.top{
+top:-30px;
+right:-30px;
+}
+
+.floatCard.bottom{
+bottom:-25px;
+left:-35px;
+}
+
+.floatIcon{
+width:38px;
+height:38px;
+display:grid;
+place-items:center;
+background:#f0eeff;
+border-radius:11px;
+font-size:18px;
+}
+
+/* TRUST */
+
+.trust{
+padding:20px 0 70px;
+}
+
+.trustBox{
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+padding:25px 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.trustText{
+color:#888c99;
+font-size:13px;
+font-weight:600;
+}
+
+.trustItems{
+display:flex;
+gap:35px;
+color:#545866;
+font-family:"Space Grotesk";
+font-weight:700;
+}
+
+/* SECTION */
+
+section{
+padding:90px 0;
+}
+
+.sectionHead{
+max-width:650px;
+margin-bottom:45px;
+}
+
+.label{
+font-size:12px;
+font-weight:800;
+color:var(--blue);
+letter-spacing:1.5px;
+text-transform:uppercase;
+}
+
+h2{
+font-family:"Space Grotesk";
+font-size:44px;
+letter-spacing:-2px;
+margin:10px 0;
+}
+
+.sectionText{
+color:var(--muted);
+line-height:1.8;
+}
+
+/* COURSES */
+
+.courseGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.course{
+background:white;
+border:1px solid var(--line);
+border-radius:20px;
+padding:24px;
+transition:.25s;
+}
+
+.course:hover{
+transform:translateY(-7px);
+box-shadow:0 25px 50px #10131c10;
+}
+
+.courseIcon{
+width:55px;
+height:55px;
+display:grid;
+place-items:center;
+font-size:25px;
+border-radius:15px;
+background:#f2f1ff;
+margin-bottom:22px;
+}
+
+.course h3{
+font-family:"Space Grotesk";
+font-size:21px;
+margin-bottom:8px;
+}
+
+.course p{
+color:var(--muted);
+line-height:1.6;
+font-size:14px;
+margin-bottom:20px;
+}
+
+.courseBottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px;
+font-weight:700;
+color:#858997;
+}
+
+.arrow{
+color:var(--blue);
+font-size:18px;
+}
+
+/* LEARNING EXPERIENCE */
+
+.experience{
+background:#10131c;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.experience .sectionText{
+color:#aeb1bd;
+}
+
+.experienceGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.check{
+display:flex;
+gap:14px;
+margin:25px 0;
+}
+
+.checkIcon{
+width:30px;
+height:30px;
+flex:none;
+border-radius:50%;
+background:#ffffff12;
+display:grid;
+place-items:center;
+color:#7d72ff;
+}
+
+.check h3{
+font-size:17px;
+margin-bottom:5px;
+}
+
+.check p{
+font-size:14px;
+line-height:1.6;
+color:#999daa;
+}
+
+.phone{
+width:290px;
+margin:auto;
+background:#05060a;
+padding:10px;
+border-radius:35px;
+box-shadow:0 40px 80px #0008;
+}
+
+.phoneScreen{
+background:#f6f7fb;
+border-radius:27px;
+padding:20px;
+height:500px;
+color:#111;
+}
+
+.phoneHeader{
+display:flex;
+justify-content:space-between;
+font-size:12px;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+.lesson{
+background:linear-gradient(135deg,#6257ff,#9b59ff);
+color:white;
+padding:20px;
+border-radius:18px;
+margin-bottom:12px;
+}
+
+.lesson small{
+opacity:.7;
+}
+
+.lesson h3{
+margin:7px 0 18px;
+}
+
+.lessonRow{
+background:white;
+padding:15px;
+border-radius:13px;
+margin:10px 0;
+font-size:13px;
+font-weight:bold;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.stat{
+background:white;
+border:1px solid var(--line);
+border-radius:20px;
+padding:30px;
+}
+
+.statNumber{
+font-family:"Space Grotesk";
+font-size:38px;
+font-weight:bold;
+}
+
+.stat p{
+color:var(--muted);
+font-size:13px;
+margin-top:5px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.review{
+background:white;
+padding:27px;
+border-radius:20px;
+border:1px solid var(--line);
+}
+
+.stars{
+color:#ffb52e;
+letter-spacing:3px;
+}
+
+.review p{
+color:#656977;
+line-height:1.7;
+margin:17px 0;
+font-size:14px;
+}
+
+.reviewer{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:13px;
+font-weight:bold;
+}
+
+.reviewAvatar{
+width:40px;
+height:40px;
+border-radius:50%;
+display:grid;
+place-items:center;
+background:#eeeaff;
+}
+
+/* CTA */
+
+.cta{
+padding:30px 0 100px;
+}
+
+.ctaBox{
+position:relative;
+overflow:hidden;
+background:linear-gradient(120deg,#6257ff,#914fff);
+border-radius:28px;
+padding:60px;
+color:white;
+text-align:center;
+}
+
+.ctaBox h2{
+font-size:45px;
+max-width:650px;
+margin:0 auto 15px;
+}
+
+.ctaBox p{
+color:#eeeaff;
+max-width:550px;
+margin:auto;
+line-height:1.7;
+}
+
+.ctaBox .btn{
+background:white;
+color:#151620;
+margin-top:25px;
+}
+
+/* FAQ */
+
+.faq{
+max-width:760px;
+margin:auto;
+}
+
+details{
+background:white;
+border:1px solid var(--line);
+border-radius:14px;
+padding:20px;
+margin:10px 0;
+}
+
+summary{
+cursor:pointer;
+font-weight:700;
+}
+
+details p{
+color:var(--muted);
+line-height:1.7;
+padding-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0b0d13;
+color:#aaa;
+padding:55px 0 25px;
+}
+
+.footerGrid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
+}
+
+footer h3{
+color:white;
+margin-bottom:18px;
+}
+
+footer a{
+display:block;
+margin:10px 0;
+font-size:14px;
+}
+
+.footerLogo{
+color:white;
+font-family:"Space Grotesk";
+font-size:21px;
+font-weight:bold;
+}
+
+.copyright{
+border-top:1px solid #ffffff12;
+margin-top:40px;
+padding-top:20px;
+font-size:12px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:58px;
+height:58px;
+display:grid;
+place-items:center;
+border-radius:50%;
+background:#20c76b;
+color:white;
+font-size:25px;
+box-shadow:0 15px 35px #20c76b44;
+z-index:900;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.heroGrid,
+.experienceGrid{
+grid-template-columns:1fr;
+}
+
+.heroVisual{
+margin-top:30px;
+}
+
+.courseGrid,
+.testimonials{
+grid-template-columns:1fr 1fr;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.footerGrid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding-top:125px;
+}
+
+h1{
+font-size:48px;
+letter-spacing:-2px;
+}
+
+h2{
+font-size:35px;
+}
+
+.courseGrid,
+.testimonials,
+.stats{
+grid-template-columns:1fr;
+}
+
+.trustItems{
+flex-wrap:wrap;
+gap:15px;
+}
+
+.dashboard{
+transform:none;
+}
+
+.floatCard{
+display:none;
+}
+
+.ctaBox{
+padding:40px 20px;
+}
+
+.ctaBox h2{
+font-size:34px;
+}
+
+.footerGrid{
+grid-template-columns:1fr;
+}
+
+.phone{
+width:270px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="nav">
+
+<a href="#" class="logo">
+<span class="logoMark">Z</span>
+ZSK Academy
+</a>
+
+<nav>
+<a href="#courses">Courses</a>
+<a href="#experience">Learning</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#join" class="navAction">Join Academy</a>
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<div class="container heroGrid">
+
+<div>
+
+<div class="eyebrow">
+<span class="dot"></span>
+Admissions Open · 2026
+</div>
+
+<h1>
+A smarter way to
+<span class="gradient">learn online.</span>
+</h1>
+
+<p class="heroText">
+ZSK Academy brings clear teaching, structured courses,
+easy notes and online learning together in one modern
+learning experience for students from Class 1 to 10.
+</p>
+
+<div class="actions">
+
+<a class="btn primary" href="#courses">
+Explore Courses →
+</a>
+
+<a class="btn secondary" href="#join">
+Start Learning
+</a>
+
+</div>
+
+</div>
+
+
+<div class="heroVisual">
+
+<div class="dashboard">
+
+<div class="window">
+
+<div class="windowTop">
+<span class="circle"></span>
+<span class="circle"></span>
+<span class="circle"></span>
+</div>
+
+<div class="dashboardBody">
+
+<div class="welcome">
+
+<div>
+<small>WELCOME TO</small>
+<h3>ZSK Academy</h3>
+</div>
+
+<div class="avatar">Z</div>
+
+</div>
+
+<div class="learningCard">
+
+<small>CONTINUE LEARNING</small>
+
+<h3>Physics — Motion</h3>
+
+<div class="progress">
+<span></span>
+</div>
+
+<br>
+
+<small>72% completed</small>
+
+</div>
+
+<div class="miniGrid">
+
+<div class="mini">
+📚
+<b>Courses</b>
+</div>
+
+<div class="mini">
+🎥
+<b>Lectures</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="floatCard top">
+
+<div class="floatIcon">🎓</div>
+
+<div>
+<strong>6+ Subjects</strong><br>
+<small>Available to learn</small>
+</div>
+
+</div>
+
+
+<div class="floatCard bottom">
+
+<div class="floatIcon">⚡</div>
+
+<div>
+<strong>Easy Learning</strong><br>
+<small>Clear explanations</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trust">
+
+<div class="container">
+
+<div class="trustBox">
+
+<div class="trustText">
+BUILT FOR STUDENTS · MADE FOR BETTER LEARNING
+</div>
+
+<div class="trustItems">
+<span>CLASS 1–10</span>
+<span>ONLINE</span>
+<span>NOTES</span>
+<span>LECTURES</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="container">
+
+<div class="sectionHead">
+
+<div class="label">Explore Learning</div>
+
+<h2>Everything you need to learn better.</h2>
+
+<p class="sectionText">
+Choose your subject and build stronger concepts
+through organized online learning.
+</p>
+
+</div>
+
+
+<div class="courseGrid">
+
+<div class="course">
+<div class="courseIcon">📐</div>
+<h3>Mathematics</h3>
+<p>Build confidence with formulas, concepts and step-by-step problem solving.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+
+<div class="course">
+<div class="courseIcon">⚡</div>
+<h3>Physics</h3>
+<p>Understand motion, energy, forces and important scientific concepts.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+
+<div class="course">
+<div class="courseIcon">🧪</div>
+<h3>Chemistry</h3>
+<p>Learn reactions, elements and chemistry concepts in simple language.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+
+<div class="course">
+<div class="courseIcon">🧬</div>
+<h3>Biology</h3>
+<p>Explore living systems with clear explanations and revision material.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+
+<div class="course">
+<div class="courseIcon">Aa</div>
+<h3>English</h3>
+<p>Improve grammar, vocabulary, writing and reading skills.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+
+<div class="course">
+<div class="courseIcon">🌙</div>
+<h3>Urdu & Islamiat</h3>
+<p>Study lessons, important questions and exam preparation.</p>
+<div class="courseBottom">
+<span>CLASS 1–10</span>
+<span class="arrow">→</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+<div class="container experienceGrid">
+
+<div>
+
+<div class="label">The ZSK Experience</div>
+
+<h2>
+Learning should feel simple.
+</h2>
+
+<p class="sectionText">
+No complicated systems. No unnecessary distractions.
+Just organized learning designed around students.
+</p>
+
+
+<div class="check">
+
+<div class="checkIcon">✓</div>
+
+<div>
+<h3>Structured Lessons</h3>
+<p>Follow subjects and topics in an organized learning path.</p>
+</div>
+
+</div>
+
+
+<div class="check">
+
+<div class="checkIcon">✓</div>
+
+<div>
+<h3>Easy Notes</h3>
+<p>Important information can be kept together for quick revision.</p>
+</div>
+
+</div>
+
+
+<div class="check">
+
+<div class="checkIcon">✓</div>
+
+<div>
+<h3>Learn Anywhere</h3>
+<p>Access your learning experience from your phone, tablet or computer.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="phone">
+
+<div class="phoneScreen">
+
+<div class="phoneHeader">
+
+<span>ZSK ACADEMY</span>
+<span>●</span>
+
+</div>
+
+<div class="lesson">
+
+<small>CONTINUE</small>
+
+<h3>Biology</h3>
+
+<div class="progress">
+<span style="width:64%"></span>
+</div>
+
+</div>
+
+<div class="lessonRow">▶ Watch Lecture</div>
+<div class="lessonRow">📄 Open Notes</div>
+<div class="lessonRow">✓ Practice Questions</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<div class="statNumber">1–10</div>
+<p>School Classes</p>
+</div>
+
+<div class="stat">
+<div class="statNumber">6+</div>
+<p>Core Subjects</p>
+</div>
+
+<div class="stat">
+<div class="statNumber">24/7</div>
+<p>Learning Access</p>
+</div>
+
+<div class="stat">
+<div class="statNumber">₨1.5K</div>
+<p>Monthly Plan</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<div class="container">
+
+<div class="sectionHead">
+
+<div class="label">Student Experience</div>
+
+<h2>Made for better learning.</h2>
+
+<p class="sectionText">
+A simple learning environment designed around
+clarity, organization and student needs.
+</p>
+
+</div>
+
+
+<div class="testimonials">
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"The simple explanations make difficult topics much easier to understand."
+</p>
+
+<div class="reviewer">
+<div class="reviewAvatar">S</div>
+Student
+</div>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"I like having lectures and notes organized together instead of searching everywhere."
+</p>
+
+<div class="reviewer">
+<div class="reviewAvatar">A</div>
+Student
+</div>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"Learning from home becomes much easier when everything is organized."
+</p>
+
+<div class="reviewer">
+<div class="reviewAvatar">M</div>
+Student
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="join">
+
+<div class="container">
+
+<div class="ctaBox">
+
+<h2>Ready to start learning differently?</h2>
+
+<p>
+Join ZSK Academy and begin your online learning journey.
+Contact us for classes, subjects, timings and admission.
+</p>
+
+<a class="btn" href="https://wa.me/923118192848">
+Join ZSK Academy →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="sectionHead">
+
+<div class="label">Questions</div>
+
+<h2>Frequently asked questions.</h2>
+
+</div>
+
+<div class="faq">
+
+<details>
+<summary>Which classes does ZSK Academy teach?</summary>
+<p>ZSK Academy is designed for students from Class 1 to Class 10.</p>
+</details>
+
+<details>
+<summary>Which subjects are available?</summary>
+<p>Mathematics, Physics, Chemistry, Biology, English, Urdu and Islamiat.</p>
+</details>
+
+<details>
+<summary>How much is the monthly fee?</summary>
+<p>The current displayed monthly learning plan is Rs. 1,500.</p>
+</details>
+
+<details>
+<summary>How can I contact ZSK Academy?</summary>
+<p>You can contact ZSK Academy directly through WhatsApp or email.</p>
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footerGrid">
+
+<div>
+
+<div class="footerLogo">ZSK Academy</div>
+
+<p style="margin-top:15px;line-height:1.7;max-width:330px;">
+Modern online learning for students from Class 1 to 10.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Explore</h3>
+
+<a href="#courses">Courses</a>
+<a href="#experience">Learning</a>
+<a href="#reviews">Reviews</a>
+
+</div>
+
+
+<div>
+
+<h3>Academy</h3>
+
+<a href="#join">Admission</a>
+<a href="#faq">FAQ</a>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<a href="https://wa.me/923118192848">WhatsApp</a>
+
+<a href="mailto:zkkakar9090@gmail.com">
+Email
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 ZSK Academy. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<a class="whatsapp" href="https://wa.me/923118192848">
+☘
+</a>
+
+</body>
+</html>
